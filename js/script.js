@@ -35,7 +35,7 @@ const checkSelect = (idName)=>{
 }
 
 document.getElementById('subject').addEventListener('input', function() {
-    data.subject = this.value;
+    data.subject = this.value.split("'").join('+');
     check(data);
     checkText(/^[A-Za-z,.(-)!']{0,100}$/g, 0, this.value, 'subject');
 });
@@ -53,7 +53,7 @@ document.getElementById('language').addEventListener('input', function() {
 });
 
 document.getElementById('info').addEventListener('input', function() {
-    data.info = this.value;
+    data.info = this.value.split("'").join('+');
     check(data);
     checkText(/^[A-Za-z,.(-)!']{0,250}$/g, 2, this.value, 'info');
 });
