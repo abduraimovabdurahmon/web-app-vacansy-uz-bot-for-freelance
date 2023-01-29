@@ -9,7 +9,7 @@ mainButton.text = 'Yuborish';
 mainButton.hide();
 
 Telegram.WebApp.onEvent('mainButtonClicked', async ()=>{
-    data.type = await 'e';
+    data.type = await 'f';
     tg.sendData(JSON.stringify(data));
 })
 
