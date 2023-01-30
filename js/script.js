@@ -55,7 +55,7 @@ document.getElementById('language').addEventListener('input', function() {
 document.getElementById('info').addEventListener('input', function() {
     data.info = this.value.split("'").join('+');
     check(data);
-    checkText(/^[A-Za-z,.(-)!']{0,250}$/g, 2, this.value, 'info');
+    checkText(/^[A-Za-z,.(-)!'\s]{0,250}$/g, 2, this.value, 'info');
 });
 
 document.getElementById('url').addEventListener('input', function() {
@@ -67,7 +67,7 @@ document.getElementById('url').addEventListener('input', function() {
 
 const check = (data) => {
     if(data.subject && data.price && data.language && data.info && data.url){
-        if(/^[A-Za-z,.(-)!']{0,100}$/g.test(data.subject) && /^[0-9]{0,100}$/g.test(data.price) && /^[A-Za-z,.(-)!']{0,250}$/g.test(data.info) && /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)$/g.test(data.url)){
+        if(/^[A-Za-z,.(-)!']{0,100}$/g.test(data.subject) && /^[0-9]{0,100}$/g.test(data.price) && /^[A-Za-z,.(-)!'\s]{0,250}$/g.test(data.info) && /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)$/g.test(data.url)){
             mainButton.show();
             console.log(data);
         }
