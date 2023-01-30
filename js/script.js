@@ -69,7 +69,6 @@ const check = (data) => {
     if(data.subject && data.price && data.language && data.info && data.url){
         if(/^[A-Za-z,.(-)!+']{0,100}$/g.test(data.subject) && /^[0-9]{0,100}$/g.test(data.price) && /^[A-Za-z,.(-)!+'\s]{0,250}$/g.test(data.info) && /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)$/g.test(data.url)){
             mainButton.show();
-            alert("ok")
         }
         else{
             mainButton.hide();
